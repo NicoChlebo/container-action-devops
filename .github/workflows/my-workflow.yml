@@ -44,3 +44,9 @@ jobs:
             run: echo '${{ toJSON(secrets) }}'
           - name: Env Variable
             run: echo '${{ vars.MY_PROD_URL }}'
+          - name: Success
+            run: echo "Success run"
+            if: success()
+          - name: Failure
+            run: echo "Failure run"
+            if: failure()
